@@ -30,28 +30,29 @@ const collections = [
 const Collections = () => {
   return (
     <section className="w-full">
-      <div className="max-w-[1200px] mx-auto p-10">
-        {/* Heading */}
-        <h1 className="text-4xl font-semibold">Collections</h1>
-        <p className="text-gray-600 mb-8">
-          Explore curated lists of top restaurants, cafes, pubs, and bars in
-          Jaipur, based on trends.
-        </p>
-        {/* Responsive Flexbox Layout */}
-        <div className="flex flex-wrap justify-between">
-          {collections.map((item, index) => (
-            <div
-              key={index}
-              className="w-[250px] h-80 rounded-lg shadow-md bg-cover bg-center flex flex-col justify-end p-4 text-white transition-transform transform"
-              style={{ backgroundImage: `url(${item.image})` }}
-            >
-              <h3 className="text-md font-semibold">{item.title}</h3>
-              <p className="text-sm">{item.places} ▶</p>
-            </div>
-          ))}
-        </div>
+    <div className="max-w-[1200px] mx-auto p-6 sm:p-10">
+      {/* Heading */}
+      <h1 className="text-3xl sm:text-4xl font-semibold">Collections</h1>
+      <p className="text-gray-600 mb-6 sm:mb-8">
+        Explore curated lists of top restaurants, cafes, pubs, and bars in
+        Jaipur, based on trends.
+      </p>
+      {/* Responsive Grid Layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 cursor-pointer">
+        {collections.map((item, index) => (
+          <div
+            key={index}
+            className="w-full h-72 rounded-lg shadow-md bg-cover bg-center flex flex-col justify-end p-4 text-white transition-transform transform hover:scale-105"
+            style={{ backgroundImage: `url(${item.image})` }}
+          >
+            <h3 className="text-md font-semibold">{item.title}</h3>
+            <p className="text-sm">{item.places} ▶</p>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
+  
   );
 };
 
